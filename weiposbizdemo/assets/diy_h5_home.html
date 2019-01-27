@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+	content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<link href="css/voucher.css" rel="stylesheet" type="text/css">
+<title>JS与本地代码交互调用SDK</title>
+</head>
+<!--这里是引入api的js文件-->
+<script language="javascript" src="wangpos_h5_api.js"></script>
+<script type="text/javascript">
+	function getPosDeviceInfo() {
+		if (typeof (Api) == 'undefined') {
+			alert("未得到初始化JS");
+		} else {
+			try {
+				var v = Api.getDeviceInfo();
+				if (v != '' && typeof (v) != 'undefined') {
+					//v为JSONObject
+					alert("设备en号：" + v.en);
+				} else {
+					alert('未读取到设备信息');
+				}
+			} catch (exception) {
+				alert("Api错误：" + exception);
+			}
+		}
+	}
+
+	function getSpeechVoice() {
+		if (typeof (Api) == 'undefined') {
+			alert("未得到初始化JS");
+		} else {
+			try {
+				var content = "你好，我是测试人员。";
+				Api.speechVoice(content);
+			} catch (exception) {
+				alert("Api错误：" + exception);
+			}
+		}
+	}
+
+	function scanQrCode() {
+		if (typeof (Api) == 'undefined') {
+			alert('未得到初始化JS');
+		} else {
+			try {
+				// type 0:扫描二维码；1：扫描条码
+				var type = 0;
+				Api.scanCode(type, function success(data) {
+					alert(data);
+				}, function error(err) {
+					alert(err);
+				});
+			} catch (exception) {
+				alert("Api错误：" + exception);
+			}
+		}
+	}
+
+	function scanOneCode() {
+		if (typeof (Api) == 'undefined') {
+			alert('未得到初始化JS');
+		} else {
+			try {
+				// type 0:扫描二维码；1：扫描条码
+				var type = 1;
+				Api.scanCode(type, function success(data) {
+					alert(data);
+				}, function error(err) {
+					alert(err);
+				});
+			} catch (exception) {
+				alert("Api错误：" + exception);
+			}
+		}
+	}
+
+	function printContent() {
+		if (typeof (Api) == 'undefined') {
+			alert("未得到初始化JS");
+		} else {
+			try {
+				var fontSize_header = 2;//字体大小，0：小号，1：中号，2：大号  默认1中号
+				var gravity_header = 1; //布局方式，0：居左，1：居中，2：居右 默认0居左
+				var type_header = 0;//打印类型，0:文本内容；1：二维码；2：条码（content必须为数字）
+				var content_header = "这里是打印标题"
+				Api.printContent(fontSize_header, gravity_header, type_header,
+						content_header);
+
+				var fontSize = 1;//字体大小，0：小号，1：中号，2：大号  默认1中号
+				var gravity = 0; //布局方式，0：居左，1：居中，2：居右 默认0居左
+				var type = 0;//打印类型，0:文本内容；1：二维码；2：条码（content必须为数字）
+				var content = "旺POS店铺\n订单号：123456789\n金额：99元\n时间：2016-06-24 13::44";
+				Api.printContent(fontSize, gravity, type, content);
+
+				var fontSize_onecode = 1;//字体大小，0：小号，1：中号，2：大号  默认1中号
+				var gravity_onecode = 1; //布局方式，0：居左，1：居中，2：居右 默认0居左
+				var type_onecode = 2;//打印类型，0:文本内容；1：二维码；2：条码（content必须为数字）
+				var content_onecode = "1234567890";
+				Api.printContent(fontSize_onecode, gravity_onecode,
+						type_onecode, content_onecode);
+
+				var fontSize = 1;//字体大小，0：小号，1：中号，2：大号  默认1中号
+				var gravity = 0; //布局方式，0：居左，1：居中，2：居右 默认0居左
+				var type = 0;//打印类型，0:文本内容；1：二维码；2：条码（content必须为数字）
+				var content = "\n\n\n\n\n";
+				Api.printContent(fontSize, gravity, type, content);
+				Api.submitPrint();
+			} catch (exception) {
+				alert("Api错误：" + exception);
+			}
+		}
+	}
+
+	function success(e){
+		alert(e);
+	}
+
+	function error(e){
+		alert(e);
+	}
+	function takePhone() {
+		if (typeof (Api) == 'undefined') {
+			alert("未得到初始化JS");
+		} else {
+			try {
+				//是否需要剪切图片
+				var isCrop = true;
+				Api.takePhone(isCrop, function success(src) {
+					//src为图片信息的base64 例如：data:image/jpeg;base64,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
+					document.getElementById('take_phone').src = src;
+					document.getElementById('take_phone').style.display = "";
+				}, function error(err) {
+					alert(err);
+				});
+			} catch (exception) {
+				alert("Api错误：" + exception);
+			}
+		}
+	}
+</script>
+
+<body>
+	<div class="voucher_main">
+
+		<div class="voucher_button">
+			<input type="button" class="input_green" value="获取设备信息"
+				onClick="getPosDeviceInfo()">
+		</div>
+		<div class="voucher_button">
+			<input type="button" class="input_green" value="调用pos播音"
+				onClick="getSpeechVoice()">
+		</div>
+		<div class="voucher_button">
+			<input type="button" class="input_green" value="调用pos扫描二维码"
+				onClick="scanQrCode()">
+		</div>
+		<div class="voucher_button">
+			<input type="button" class="input_green" value="调用pos扫描条码"
+				onClick="scanOneCode()">
+		</div>
+		<div class="voucher_button">
+			<input type="button" class="input_green" value="调用pos打印小票"
+				onClick="printContent()">
+		</div>
+		<div class="voucher_button">
+			<input type="button" class="input_green" value="调用pos拍照"
+				onClick="takePhone()">
+		</div>
+		<div class="voucher_button">
+			<img id="take_phone" width="400" height="300" style="display: none" />
+		</div>
+
+	</div>
+
+
+</body>
+</html>

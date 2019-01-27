@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/weipos_bg"
+    android:orientation="horizontal" >
+
+    <include
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        layout="@layout/header" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_layout"
+        android:fillViewport="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" 
+            android:gravity="center">
+
+            <Button
+                    android:id="@+id/btn_nfc_normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/btn_normal_selector"
+                    android:text="标准NFC卡通讯"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_normal_size" />
+            
+            <Button
+                    android:id="@+id/btn_nfc_cpu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_normal_selector"
+                    android:text="旺POS CPU卡通讯"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_normal_size" />
+            
+             <Button
+                    android:id="@+id/btn_nfc_m0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_normal_selector"
+                    android:text="旺POS M0卡通讯"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_normal_size" />
+            
+            <Button
+                    android:id="@+id/btn_nfc_m1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_normal_selector"
+                    android:text="旺POS M1卡通讯"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_normal_size" />
+            
+            <Button
+                    android:id="@+id/btn_nfc_unionpay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_normal_selector"
+                    android:text="旺POS 银联卡通讯"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_normal_size" />
+            <Button
+                android:id="@+id/btn_nfc_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_normal_selector"
+                android:text="切换非接卡与IC卡寻卡模式通讯演示"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_normal_size" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

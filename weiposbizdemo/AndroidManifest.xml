@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.weipass.biz"
+    android:versionCode="54"
+    android:versionName="2.02">
+
+
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- nfc使用权限 -->
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar">
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainNewActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="true"
+            android:launchMode="singleTask"></activity>
+        <activity
+            android:name=".DataChannelTakeTicketOneActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".DataChannelPushMsgActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".NfcCpuActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".NfcM0Activity"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".NfcM1Activity"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".NfcBankActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".NfcSwitchNormalActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".DataChannelTakeTicketTwoActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".ProviderCallBackActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="true"
+            android:launchMode="singleInstance"></activity>
+        <activity
+            android:name=".ProviderListActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".AuthorizeTextActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".MagneticCardActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".NfcNormalActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".RsaTestActivity"></activity>
+        <activity
+            android:name=".DataChannelUseActivity"
+            android:configChanges="orientation"
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+        <activity
+            android:name=".PSAMTestActivity"
+            android:configChanges="orientation"
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+        <activity
+            android:name=".ScanerActivity"
+            android:configChanges="keyboardHidden|orientation|mcc|mnc|screenSize"
+            android:exported="true"
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+        <activity
+            android:name=".PrinterActivity"
+            android:configChanges="orientation"
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+        <activity
+            android:name=".NfcActivity"
+            android:configChanges="orientation"
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+        <activity
+            android:name=".SonarActivity"
+            android:configChanges="orientation"
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+        <activity
+            android:name=".CashierInvokeActivity"
+            android:configChanges="orientation"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+        <activity
+            android:name=".WebTurnViewActivity"
+            android:configChanges="orientation"
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+        <activity
+            android:name=".BluetoothCashActivity"
+            android:configChanges="orientation"
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+        <activity
+            android:name=".DockPictureActivity"
+            android:configChanges="orientation"
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+    </application>
+
+</manifest>

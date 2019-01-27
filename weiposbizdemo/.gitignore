@@ -1,0 +1,11 @@
+gen/
+bin/
+build/
+gradle/
+.gradle/
+.idea/
+/.idea
+/gradlew
+/gradlew.bat
+/weiposbizdemo.iml
+/local.properties

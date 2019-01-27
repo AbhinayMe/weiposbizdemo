@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/weipos_bg"
+    android:orientation="horizontal" >
+
+    <include
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        layout="@layout/header" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_layout"
+        android:fillViewport="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" 
+            android:gravity="center">
+
+            <Button
+                    android:id="@+id/btn_data_channel_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/btn_normal_selector"
+                    android:text="输入验证码获取电影票"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_normal_size" />
+            
+            <Button
+                    android:id="@+id/btn_data_channel_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_normal_selector"
+                    android:text="获取显示电影票二维码，监听服务端推送微信扫描结果"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_normal_size" />
+            
+            <Button
+                    android:id="@+id/btn_data_channel_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_normal_selector"
+                    android:text="通知BP服务器推送声音消息"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_normal_size" />
+            
+            
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

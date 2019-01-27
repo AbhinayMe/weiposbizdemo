@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">旺POS业务Demo</string>
+    <string name="app_title">旺POS业务Demo</string>
+    <string name="title_activity_web_view_print">在WEB View中通过JS完成打印</string>
+
+    <string name="point">提示</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="failed_to_get_content">获取内容失败</string>
+    <string name="data_incorrect_for_print">打印参数格式不正确</string>
+    <string name="print_content_can_not_empty">打印内容不能为空</string>
+    <string name="scan_init_error">扫描对象初始化失败</string>
+    <string name="print_success">打印成功</string>
+    <string name="init_photograph_failed">初始化相机失败</string>
+    <string name="print_init_error">打印机初始化错误</string>
+    <string name="print_status_connect_fail">连接打印机失败</string>
+    <string name="print_status_connect_ok">连接打印机成功</string>
+    <string name="print_status_paper_jam">打印机卡纸</string>
+    <string name="print_status_unknow">打印机未知错误</string>
+    <string name="print_status_no_paper">打印机缺纸</string>
+    <string name="print_status_high_tmep">打印机高温</string>
+    <string name="print_status_print_failed">打印失败 </string>
+    <string name="print_status_normal">打印机正常 </string>
+
+    <string name="main_init_toast">旺POS设备初始化完成</string>
+    <string name="main_scan_toast_error">尚未初始化扫码sdk，请稍后再试</string>
+    <string name="main_scan_result">扫码结果</string>
+    <string name="main_scan_code">二维码信息</string>
+    <string name="main_print_toast_error">尚未初始化打印sdk，请稍后再试</string>
+    <string name="main_printing">正在打印小票...</string>
+    <string name="main_print">打印</string>
+    <string name="main_print_result">打印结果信息</string>
+    <string name="main_ac_toast_error">尚未初始化声波通讯sdk，请稍后再试</string>
+    <string name="main_acing">正在声波通讯...</string>
+    <string name="main_ac_receive_data">声波接收数据：</string>
+    <string name="main_ac">声波通讯</string>
+    <string name="main_ac_receive_data1">接收到的数据</string>
+    <string name="main_ac_send_data">声波发送数据：</string>
+    <string name="main_cashier_toast_error">初始化服务调用失败</string>
+    <string name="main_cashier_toast_req1">收银服务调用成功</string>
+    <string name="main_cashier_toast_req2">请求参数错误！</string>
+    <string name="main_cashier_toast_req3">未知的合作伙伴！</string>
+    <string name="main_cashier_toast_req4">未找到合适的服务！</string>
+    <string name="main_cashier_toast_req5">请求未知错误！</string>
+    <string name="main_cashier_succeed">接收到服务调用完成回调</string>
+    <string name="main_psam_toast_error">尚未初始化pasm sdk，请稍后再试</string>
+    <string name="main_psam_normal1">PSAM卡测试</string>
+    <string name="main_psam_normal2">测试成功</string>
+    <string name="main_psam_normal3">psam卡返回字节数据为(</string>
+    <string name="main_psam_normal4">测试成功,psam卡返回字节数据为(</string>
+    <string name="main_psam_normal5">测试失败</string>
+    <string name="main_psam_normal6">请确保设备插入PSAM卡，并且插入PSAM卡后重启设备。</string>
+    <string name="main_latticeprint_normal1">尚未初始化点阵打印sdk，请稍后再试</string>
+    <string name="main_latticeprint_normal2">打印</string>
+    <string name="main_latticeprint_normal3">打印结果信息</string>
+    <string name="main_mag_normal1">初始化磁条卡sdk失败</string>
+    <string name="main_photo_normal1">获取图片失败</string>
+    <string name="main_photo_normal2">初始化拍照sdk失败</string>
+    <string name="main_service_normal1">初始化支付提供sdk错误</string>
+    <string name="main_service_normal2">暂无可用支付基础服务</string>
+    <string name="main_normal1">确认</string>
+    <string name="main_normal2">取消</string>
+    <string name="main_datalist1">输入验证码取票</string>
+    <string name="main_datalist2">用户扫码取票</string>
+    <string name="main_datalist3">旺POS扫码取票</string>
+    <string name="main_datalist4">旺POS打印小票</string>
+    <string name="main_datalist5">旺POS声波通讯</string>
+    <string name="main_datalist6">旺POS NFC通讯</string>
+    <string name="main_datalist7">旺POS支付方式获取</string>
+    <string name="main_datalist8">WebView中通过JS调用打印</string>
+    <string name="main_datalist9">读取磁条卡刷卡信息</string>
+    <string name="main_datalist10">调用SDK拍照</string>
+    <string name="main_datalist11">调用SDK从文件中选择照片</string>
+    <string name="main_datalist12">WebView中通过JS调用播音</string>
+    <string name="main_datalist13">通知BP业务方PUSH声音消息</string>
+    <string name="main_datalist14">点阵打印</string>
+    <string name="main_datalist15">银行卡NFC通讯</string>
+    <string name="main_datalist16">授权管理测试</string>
+    <string name="main_datalist17">PSAM卡检测</string>
+    <string name="main_datalist18">WebView中通过JS调用扫码</string>
+    <string name="main_datalist19">本地调用收银服务</string>
+    <string name="main_datalist20">读写M1卡</string>
+    <string name="main_datalist21">RSA接口测试</string>
+    <string name="main_datalist22">NFC Reader-mode实现</string>
+
+    <string name="other_1">收银应用测试</string>
+    <string name="other_2">退钱</string>
+    <string name="other_3">结钱</string>
+    <string name="other_4">收钱</string>
+    <string name="other_5">授权成功</string>
+    <string name="other_6">密码错误结束应用</string>
+    <string name="other_7">禁止操作</string>
+
+    <string name="other_8">nfc没有开启</string>
+    <string name="other_9">提示</string>
+    <string name="other_10">是否开启nfc?</string>
+    <string name="other_11">是</string>
+    <string name="other_12">否</string>
+    <string name="other_13">当前设备不支持nfc</string>
+    <string name="other_14">不支持读写M1卡，请检查是否为旺Pos 2S设备</string>
+    <string name="other_15">M1卡认证失败</string>
+    <string name="other_16">值:</string>
+    <string name="other_17">读取M1卡内容失败</string>
+    <string name="other_18">读取内容信息：</string>
+    <string name="other_19">写入内容内容过长,最长写入16字节长度</string>
+    <string name="other_20">M1卡成功写入内容：</string>
+    <string name="other_21">请填写你要写入的内容</string>
+    <string name="other_22">M1卡写入失败</string>
+    <string name="other_23">写入成功</string>
+    <string name="other_24">M1卡读写demo:\n</string>
+    <string name="other_25">1、选择读写的操作类型。（如果是写入操作可自定义写入内容）\n</string>
+    <string name="other_26">2、M1卡放在设备头部带有NFC标志处。\n</string>
+    <string name="other_27">3、观察M1卡是否读写成功。\n</string>
+
+    <string name="other_28">磁条卡读取服务不可用！</string>
+    <string name="other_29">磁条卡内容：</string>
+    <string name="other_30">磁条卡读卡demo:\n</string>
+
+    <string name="other_31">NFC读卡</string>
+    <string name="other_32">NFC读卡号失败,</string>
+    <string name="other_33">旺POS CPU NFC卡，卡号：</string>
+    <string name="other_34">NFC读卡失败</string>
+    <string name="other_35">NFC读卡demo:\n</string>
+    <string name="other_36">1、NFC卡放在设备头部带有NFC标志处。\n</string>
+    <string name="other_37">2、观察是否能够获取NFC卡号信息。\n</string>
+
+    <string name="other_38">NFC读银行卡</string>
+    <string name="other_39">NFC读卡号失败,</string>
+    <string name="other_40">NFC读卡成功:\n卡号：</string>
+    <string name="other_41">\n类型：</string>
+    <string name="other_42">\n名称：</string>
+    <string name="other_43">不是银行NFC卡</string>
+    <string name="other_44">NFC读卡失败</string>
+    <string name="other_45">1、银行卡NFC卡放在设备头部带有NFC标志处。\n</string>
+
+    <string name="other_46">NFC读卡--Reader方式</string>
+    <string name="other_47">设备不支持NFC！</string>
+    <string name="other_48">手机NFC功能没有打开！</string>
+    <string name="other_49">手机NFC开关未打开，是否现在去打开？</string>
+
+    <string name="other_50">正在通知PUSH，请稍等...</string>
+    <string name="other_51">发音内容不能为空</string>
+    <string name="other_52">业务demo通知服务端推送消息</string>
+    <string name="other_53">接口调用成功</string>
+
+    <string name="other_54">第三方支付结果</string>
+    <string name="other_55">回调信息:</string>
+
+    <string name="other_56">可用支付方式</string>
+
+    <string name="other_57">RSA加解密测试</string>
+    <string name="other_58">私钥解码公钥加密的数据</string>
+    <string name="other_59">解码失败，公钥加密失败！</string>
+    <string name="other_60">解码失败，私钥解密失败！</string>
+    <string name="other_61">解码成功！</string>
+    <string name="other_62">解码失败，解密结果不匹配！</string>
+    <string name="other_63">缺少公钥！</string>
+    <string name="other_64">公钥解密私钥签名的数据</string>
+    <string name="other_65">签名失败，私钥加密失败！</string>
+    <string name="other_66">签名失败，公钥解密失败！</string>
+    <string name="other_67">签名成功！</string>
+    <string name="other_68">签名失败，解密结果不匹配！</string>
+    <string name="other_69">缺少公钥！</string>
+
+    <string name="other_70">正在获取电影票信息，请稍等...</string>
+    <string name="other_71">验证码不能为空</string>
+    <string name="other_72">获取信息失败</string>
+    <string name="other_73">获取的电影票信息\n</string>
+    <string name="other_74">昵称：</string>
+    <string name="other_75">影院：</string>
+    <string name="other_76">影片：</string>
+    <string name="other_77">时间：</string>
+    <string name="other_78">影厅：</string>
+    <string name="other_79">姓名：</string>
+    <string name="other_80">座位：</string>
+    <string name="other_81">SDK未初始化完成，请稍后再试</string>
+
+    <string name="other_82">正在获取二维码信息，请稍等...</string>
+    <string name="other_83">获取二维码失败！</string>
+
+    <string name="other_84">JS调用SDK打印</string>
+    <string name="other_85">连接打印机失败</string>
+    <string name="other_86">打印机缺纸</string>
+    <string name="other_87">打印机卡纸</string>
+    <string name="other_88">打印未知错误</string>
+
+    <string name="other_89">JS调用SDK扫码</string>
+    <string name="other_90">扫码成功，内容为</string>
+    <string name="other_91">扫码失败，内容为</string>
+    <string name="other_92">扫码取消</string>
+    <string name="other_93">扫码结果：</string>
+
+    <string name="other_94">JS调用SDK播音</string>
+
+</resources>

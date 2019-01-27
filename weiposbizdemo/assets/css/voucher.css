@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{ margin:0; padding:0; font-family:Arail,"Microsoft YaHei";}
+body{font-size:14px; line-height:24px;}
+a{ text-decoration:none;}
+ul,li { list-style:none;}
+
+/*按钮*/
+.input_green{ -webkit-appearance:none; margin-right:8%;  width:45%; height:45px; background:#6ba11e; line-height:45px; color:#fff; font-size:16px; text-align:center; border:none; border-radius:8px; }
+.input_green:hover{ -webkit-appearance:none;   background:#568118;}
+.input_green_2{ -webkit-appearance:none; width:45%; height:45px; background:#6ba11e; line-height:45px; color:#fff; font-size:16px; text-align:center; border:none; border-radius:8px; }
+.input_green_2:hover{ -webkit-appearance:none;   background:#568118;}
+.input_gray{ -webkit-appearance:none;  width:45%; height:45px; background:#9f9f9e; line-height:45px; color:#fff; font-size:16px; text-align:center; border:none; border-radius:8px; }
+.input_gray:hover{ -webkit-appearance:none;   background:#7f7f7e;}
+
+.wangpos_item_more{ text-align:center; margin:0; padding:30px 30px; border-bottom:1px solid #d0d0d0;}
+.wangpos_item_more p{ line-height:30px;}
+.wangpos_item_more span{ margin-right:5px; width:75px; font-size:22px; color:#000; text-align:right;}
+
+
+/*卡券*/
+.voucher_main{ margin:0; padding:10px 15px; border-bottom:1px solid #d0d0d0;}
+.voucher_main p{ line-height:30px;}
+.voucher_main span{ margin-right:5px; width:75px; font-size:14px; color:#000; text-align:right;}
+.baby_details_title{ height:35px;}
+.baby_details_title td{ width:3%; color:#000; font-size:16px;}
+.voucher_button{ margin:2% auto 5px auto; text-align:center;}
+
+.success_verification_main{text-align:center;}
+.success_verification_main p{ text-align:left;}
+.success_verification{ display:inline-block; background:url(../images/ico_ok.png) no-repeat; background-size:90%; width:48px; height:48px; vertical-align:middle;}
+.success_verification_main .voucher_success{ font-size:16px; line-height:30px; color:#000; font-weight:bold;}

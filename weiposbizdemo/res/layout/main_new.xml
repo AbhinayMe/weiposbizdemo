@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/weipos_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/header"/>
+
+    <ImageView
+        android:id="@+id/app_demo_take_phone"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerInside"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/app_demo_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:cacheColorHint="#00000000"
+        android:divider="#00000000"
+        android:dividerHeight="10dp"
+        android:listSelector="#00000000" >
+    </ListView>
+
+</LinearLayout>
