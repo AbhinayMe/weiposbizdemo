@@ -58,14 +58,14 @@ public class PrinterActivity extends Activity implements
 		
 		
 		try {
-			// 设备可能没有打印机，open会抛异常
+			// The device may not have a printer, open will throw an exception
 			printer = WeiposImpl.as().openPrinter();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 		
 		try {
-			// 设备可能没有打印机，open会抛异常
+			// The device may not have a printer, open will throw an exception
 			latticePrinter = WeiposImpl.as().openLatticePrinter();
 		} catch (Exception e) {
 			// TODO: handle exception
