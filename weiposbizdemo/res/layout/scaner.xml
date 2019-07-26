@@ -31,7 +31,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/btn_normal_selector"
-                android:text="扫描二维码"
+                android:text="Scan QR code"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_normal_size" />
 
@@ -43,7 +43,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/btn_normal_selector"
-                android:text="扫描条码"
+                android:text="Scanning barcode"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_normal_size" />
 
@@ -55,10 +55,10 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/btn_normal_selector"
-                android:text="扫描特定规则条码/n（扫描以99开头的或者第5位置以“/2”开头的）"
+                android:text="Scan a specific rule barcode /n (scanning starts with 99 or the 5th position starts with “/2”）"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_normal_size"
-                android:visibility="gone"/>
+                android:visibility="visible"/>
 
             <Button
                 android:id="@+id/btn_scaner_four"
@@ -68,10 +68,10 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/btn_normal_selector"
-                android:text="扫描带/条码（小米之家老接口）"
+                android:text="Scanning tape / barcode (the old interface of Xiaomi home)"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_normal_size"
-                android:visibility="gone"/>
+                android:visibility="visible"/>
         </LinearLayout>
     </ScrollView>
 

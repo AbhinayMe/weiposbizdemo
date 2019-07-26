@@ -7,9 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -27,8 +25,6 @@ import java.util.ArrayList;
 
 import cn.weipass.biz.util.HEX;
 import cn.weipass.biz.util.SdkTools;
-import cn.weipass.pos.sdk.Ped;
-import cn.weipass.pos.sdk.PsamManager;
 import cn.weipass.pos.sdk.impl.WeiposImpl;
 import cn.weipass.service.sam.SamResult;
 
@@ -46,7 +42,7 @@ public class MainNewActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_new);
 
-		//初始化sdk，只需要在apk启动入口初始化一次，当应用完全退出是会自动调用sdk的onDestroy()
+		//Initialize sdk, only need to initialize the apk startup entry once, when the application completely exits, it will automatically call sdk's onDestroy()
 		SdkTools.initSdk(this);
 				
 		thisActivity = this;
@@ -62,7 +58,7 @@ public class MainNewActivity extends Activity implements OnClickListener {
 		lv.setAdapter(adapter);
 		lv.setOnItemClickListener(onItemClickListener);
 
-		// 判断玩设备类型后显示操作项
+		// Determine the action item after playing the device type
 		initData();
 
 	}
@@ -71,12 +67,12 @@ public class MainNewActivity extends Activity implements OnClickListener {
 	public void onResume(){
 		super.onResume();
 		if ("tab".equals(SdkTools.deviceType)) {
-			if (!dataList.contains("蓝牙钱箱")) {
-				dataList.add("蓝牙钱箱");
+			if (!dataList.contains("Bluetooth cash box")) {
+				dataList.add("Bluetooth cash box");
 				updateView();
 			}
 		} else  {
-			dataList.remove("蓝牙钱箱");
+			dataList.remove("Bluetooth cash box");
 		}
 	}
 
@@ -89,72 +85,72 @@ public class MainNewActivity extends Activity implements OnClickListener {
 			switch (position) {
 			case 0:
 				/**
-				 * 返回信息为json字符串，具体参数说明如下： mcode：商户Code model: 设备类型名
-				 * deviceType:设备类型，2，2s，3；（2：pos2,2s:pos2s,3:pos3）
-				 * ota-name:设备ota版本名称 name：登陆用户名 snCode：设备SN号 en：设备EN号
-				 * longitude:经度 latitude:维度 loginType：员工卡类型
+				 * The return information is a json string. The specific parameters are as follows: mcode: Merchant Code model: Device type name
+				 * deviceType: device type, 2, 2s, 3; (2: pos2, 2s: pos2s, 3: pos3)
+				 * ota-name: device ota version name name: login user name snCode: device SN number en: device EN number
+				 * longitude: longitude latitude: dimension loginType: employee card type
 				 */
 				String deviceInfo = WeiposImpl.as().getDeviceInfo();
-				showMsgDialog("设备信息", "返回结果：", deviceInfo);
+				showMsgDialog("Device Information", "Return result：", deviceInfo);
 				break;
 			case 1:
-				//扫描二维码和条码信息
+				//Scan QR code and barcode information
 				intent = new Intent(thisActivity, ScanerActivity.class);
 				thisActivity.startActivity(intent);
 				break;
 			case 2:
-				//本地调用SDK播音
-				String voiceStr = "你好，正在调用SDK播放语音。";//这里是需要播音的内容
-				WeiposImpl.as().speech(voiceStr);//本地调用播音请求
+				//Local call to SDK broadcast
+				String voiceStr = "Hello, is calling the SDK to play the voice."; // here is the content that needs to be broadcast
+				WeiposImpl.as().speech(voiceStr);//Local call broadcast request
 				break;
 			case 3:
-				//sdk使用datachannel和服务端交互
+				//Sdk uses datachannel to interact with the server
 				intent = new Intent(thisActivity, DataChannelUseActivity.class);
 				thisActivity.startActivity(intent);
 				break;
 			case 4:
-				//sdk调用pos打印
+				//Sdk calls pos print
 				intent = new Intent(thisActivity, PrinterActivity.class);
 				thisActivity.startActivity(intent);
 				break;
 			case 5:
-				//旺POS NFC通讯
+				//Wang POS NFC Communication
 				intent = new Intent(thisActivity, NfcActivity.class);
 				thisActivity.startActivity(intent);
 				break;
 			case 6:
-				//旺POS 声波通讯
+				//Wang POS Acoustic Communication
 				intent = new Intent(thisActivity, SonarActivity.class);
 				thisActivity.startActivity(intent);
 				break;
 			case 7:
-				//旺POS 磁条卡刷卡
+				//Wang POS magnetic stripe card swipe
 				intent = new Intent(thisActivity, MagneticCardActivity.class);
 				thisActivity.startActivity(intent);
 				break;
 			case 8:
-				//本地BP应用调用收银支付
+				//Local BP application calls cashier payment
 				intent = new Intent(thisActivity, CashierInvokeActivity.class);
 				thisActivity.startActivity(intent);
 				break;
 			case 9:
-				//打开自定义webview
+				//Open custom webview
 				intent = new Intent(thisActivity, WebTurnViewActivity.class);
 				thisActivity.startActivity(intent);
 				break;
 			case 10:
-				//授权管理测试
-				// 授权管理测试首先需要在pos端在设置页开启授权管理
+				//Authorization management test
+				//Authorization management test first needs to open the authorization management on the setup page in the pos terminal.
 				intent = new Intent(MainNewActivity.this, AuthorizeTextActivity.class);
 				MainNewActivity.this.startActivity(intent);
 				break;
 			case 11:
-				//PSAM卡检测
+				//PSAM card detection
 				intent = new Intent(MainNewActivity.this,PSAMTestActivity.class);
 				MainNewActivity.this.startActivity(intent);
 				break;
 			case 12:
-				//RSA接口测试
+				//RSA interface test
 				intent = new Intent(MainNewActivity.this, RsaTestActivity.class);
 				MainNewActivity.this.startActivity(intent);
 				break;
@@ -167,7 +163,7 @@ public class MainNewActivity extends Activity implements OnClickListener {
 						intent = new Intent(MainNewActivity.this, BluetoothCashActivity.class);
 						MainNewActivity.this.startActivity(intent);
 					} else {
-						Toast.makeText(MainNewActivity.this,"此功能只能在TAB上使用",Toast.LENGTH_SHORT).show();
+						Toast.makeText(MainNewActivity.this,"This feature can only be used on TAB",Toast.LENGTH_SHORT).show();
 					}
 					break;
 			default:
@@ -214,14 +210,14 @@ public class MainNewActivity extends Activity implements OnClickListener {
 
 		builder.setMessage(tip + ":" + info);
 		builder.setTitle(title);
-		builder.setPositiveButton("确认", new android.content.DialogInterface.OnClickListener() {
+		builder.setPositiveButton("confirm", new android.content.DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 
 				dialog.dismiss();
 			}
 		});
-		builder.setNegativeButton("取消", new android.content.DialogInterface.OnClickListener() {
+		builder.setNegativeButton("cancel", new android.content.DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();
@@ -232,22 +228,22 @@ public class MainNewActivity extends Activity implements OnClickListener {
 
 	private void initData() {
 		dataList.clear();
-		dataList.add("获取设备信息");
-		dataList.add("调用扫码\n(二维码、条码)");
-		dataList.add("本地调用SDK播音");
-		dataList.add("使用DataChannel数据通道\n(输码取票、扫描取票、推送播音)");
-		dataList.add("调用POS打印\n(普通打印-已不维护、点阵打印-推荐)");
-		dataList.add("旺POS NFC通讯\n(标准卡、CUP卡、M1卡、银联卡)");
-		dataList.add("旺POS 声波通讯");
-		dataList.add("旺POS 磁条卡刷卡");
-		dataList.add("本地BP应用调用收银支付");
-		dataList.add("JS与本地代码交互调用SDK");
-		dataList.add("授权管理测试");
-		dataList.add("PSAM卡检测");
-		dataList.add("RSA接口测试");
-		dataList.add("VGA测试");
-		dataList.add("蓝牙钱箱");
-		//蓝牙钱箱只显示在TAB上，后面如果增加新的item，建议将onclick的case 数值，蓝牙钱箱改为最后一个
+		dataList.add("Get device information");
+		dataList.add("call scan code \n (two-dimensional code, barcode)");
+		dataList.add("Local call SDK broadcast");
+		dataList.add("Use DataChannel data channel\n (pass code picking, scan ticket picking, push broadcast)");
+		dataList.add("call POS print\n (plain print - no maintenance, dot matrix print - recommended)");
+		dataList.add("wang POS NFC Communication\n (Standard Card, CUP Card, M1 Card, UnionPay Card)");
+		dataList.add("wang POS Sonic Communication");
+		dataList.add("wang POS magnetic stripe card swipe");
+		dataList.add("Local BP application calls cashier payment");
+		dataList.add("JS interacts with native code to call SDK");
+		dataList.add("authorization management test");
+		dataList.add("PSAM card detection");
+		dataList.add("RSA interface test");
+		dataList.add("VGA test");
+		dataList.add("Bluetooth cash box");
+		//The Bluetooth cashbox is only displayed on the TAB. If a new item is added later, it is recommended to change the case value of the onclick to the last one.
 		updateView();
 	}
 
@@ -307,8 +303,8 @@ public class MainNewActivity extends Activity implements OnClickListener {
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
-		// 注意：destroy函数在一级根页面的onDestroy调用，以防止在二级页面或者返回到一级页面中
-		// 使用weipos能力对象（例如：Printer）抛出服务未初始化的异常.
+		// Note: The destroy function is called on the onDestroy of the first-level root page to prevent it from being in the secondary page or returning to the first-level page.
+		// Use the weipos capability object (for example: Printer) to throw a service uninitialized exception.
 		try {
 			WeiposImpl.as().destroy();
 		} catch (Exception e) {

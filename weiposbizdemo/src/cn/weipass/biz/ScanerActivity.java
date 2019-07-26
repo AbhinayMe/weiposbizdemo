@@ -19,7 +19,7 @@ import cn.weipass.service.scan.ScanRuleBean;
 
 /**
  * @author Tianhui
- * sdk使用DataChannel与服务端交互实现自定义业务
+ * Sdk uses DataChannel to interact with the server to implement custom services.
  */
 public class ScanerActivity extends Activity implements
         OnClickListener {
@@ -34,7 +34,7 @@ public class ScanerActivity extends Activity implements
         setContentView(R.layout.scaner);
 
         TextView topTitle = (TextView) findViewById(R.id.page_top_title);
-        topTitle.setText("调用扫描二维码和条码");
+        topTitle.setText("Call scan QR code and barcode");
         findViewById(R.id.btn_return).setOnClickListener(this);
 
         findViewById(R.id.btn_scaner_one).setOnClickListener(this);
@@ -42,8 +42,8 @@ public class ScanerActivity extends Activity implements
         findViewById(R.id.btn_scaner_three).setOnClickListener(this);
         findViewById(R.id.btn_scaner_four).setOnClickListener(this);
 
-        // 调用扫码二维码的activity需要在Manifest文件中配置android:exported="true"属性
-        //获取sdk扫描对象
+        // The activity that calls the scan code QR code needs to configure the android:exported="true" attribute in the Manifest file.
+        // Get sdk scan object
         scanner = WeiposImpl.as().openScanner();
     }
 
@@ -61,21 +61,21 @@ public class ScanerActivity extends Activity implements
             case R.id.btn_return:
                 onBackPressed();
                 break;
-            case R.id.btn_scaner_three://小米之家
-// 调用扫码二维码的activity需要在Manifest文件中配置android:exported="true"属性
+            case R.id.btn_scaner_three://The house of Xiaomi
+                // The activity that calls the scan code QR code needs to configure the android:exported="true" attribute in the Manifest file.
                 if (scanner == null) {
-                    Toast.makeText(ScanerActivity.this, "SDK扫描对象为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ScanerActivity.this, "SDK scan object is empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 /**
-                 * 扫码类型，二维码
+                 * Scan code type, QR code
                  * TYPE_QR = 1;
                  *
-                 * 扫描类型，条码
-                 *  TYPE_BAR = 2;
+                 * Scan type, barcode
+                 * TYPE_BAR = 2;
                  *
-                 * 扫描类型，条码（小米之家）
-                 *  TYPE_SPECIAL_BAR = -1;
+                 * Scan type, barcode (The House of Xiaomi)
+                 * * TYPE_SPECIAL_BAR = -1;
                  */
 
                 ScanRuleBean rule1 = new ScanRuleBean("99", 0);
@@ -88,10 +88,10 @@ public class ScanerActivity extends Activity implements
                         // TODO Auto-generated method stub
 
                         final String info = in;
-                        // 回调函数中不能做UI操作，所以可以使用runOnUiThread函数来包装一下代码块
+                        // The UI function cannot be done in the callback function, so you can use the runOnUiThread function to wrap the code block.
                         runOnUiThread(new Runnable() {
                             public void run() {
-                                showResultInfo("扫码结果", "信息", info);
+                                showResultInfo("Scan code result", "information", info);
 
                             }
                         });
@@ -100,16 +100,16 @@ public class ScanerActivity extends Activity implements
 
                 break;
             case R.id.btn_scaner_one:
-                // 调用扫码二维码的activity需要在Manifest文件中配置android:exported="true"属性
+                // The activity that calls the scan code QR code needs to configure the android:exported="true" attribute in the Manifest file.
                 if (scanner == null) {
-                    Toast.makeText(ScanerActivity.this, "SDK扫描对象为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ScanerActivity.this, "SDK scan object is empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 /**
-                 * 扫码类型，二维码
+                 * Scan code type, QR code
                  * TYPE_QR = 1;
                  *
-                 * 扫描类型，条码
+                 * Scan type, barcode
                  *  TYPE_BAR = 2;
                  */
                 scanner.scan(Scanner.TYPE_QR, new OnResultListener() {
@@ -119,10 +119,10 @@ public class ScanerActivity extends Activity implements
                         // TODO Auto-generated method stub
 
                         final String info = in;
-                        // 回调函数中不能做UI操作，所以可以使用runOnUiThread函数来包装一下代码块
+                        // The UI function cannot be done in the callback function, so you can use the runOnUiThread function to wrap the code block.
                         runOnUiThread(new Runnable() {
                             public void run() {
-                                showResultInfo("扫码结果", "二维码信息", info);
+                                showResultInfo("Scan code result", "QR code information", info);
 
                             }
                         });
@@ -130,9 +130,9 @@ public class ScanerActivity extends Activity implements
                 });
                 break;
             case R.id.btn_scaner_four:
-                // 调用扫码二维码的activity需要在Manifest文件中配置android:exported="true"属性
+                // The activity that calls the scan code QR code needs to configure the android:exported="true" attribute in the Manifest file.
                 if (scanner == null) {
-                    Toast.makeText(ScanerActivity.this, "SDK扫描对象为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ScanerActivity.this, "SDK scan object is empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 scanner.scan(Scanner.TYPE_SPECIAL_BAR, new OnResultListener() {
@@ -142,10 +142,10 @@ public class ScanerActivity extends Activity implements
                         // TODO Auto-generated method stub
 
                         final String info = in;
-                        // 回调函数中不能做UI操作，所以可以使用runOnUiThread函数来包装一下代码块
+                        // The UI function cannot be done in the callback function, so you can use the runOnUiThread function to wrap the code block.
                         runOnUiThread(new Runnable() {
                             public void run() {
-                                showResultInfo("扫码结果", "条码信息", info);
+                                showResultInfo("Scan code result", "Bar code information", info);
 
                             }
                         });
@@ -154,16 +154,16 @@ public class ScanerActivity extends Activity implements
                 break;
 
             case R.id.btn_scaner_two:
-                // 调用扫码二维码的activity需要在Manifest文件中配置android:exported="true"属性
+                // The activity that calls the scan code QR code needs to configure the android:exported="true" attribute in the Manifest file.
                 if (scanner == null) {
-                    Toast.makeText(ScanerActivity.this, "SDK扫描对象为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ScanerActivity.this, "SDK scan object is empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 /**
-                 * 扫码类型，二维码
+                 * Scan code type, QR code
                  * TYPE_QR = 1;
                  *
-                 * 扫描类型，条码
+                 * Scan type, barcode
                  *  TYPE_BAR = 2;
                  */
                 scanner.scan(Scanner.TYPE_BAR, new OnResultListener() {
@@ -173,10 +173,10 @@ public class ScanerActivity extends Activity implements
                         // TODO Auto-generated method stub
 
                         final String info = in;
-                        // 回调函数中不能做UI操作，所以可以使用runOnUiThread函数来包装一下代码块
+                        // The UI function cannot be done in the callback function, so you can use the runOnUiThread function to wrap the code block.
                         runOnUiThread(new Runnable() {
                             public void run() {
-                                showResultInfo("扫码结果", "条码信息", info);
+                                showResultInfo("Scan code result", "Bar code information", info);
 
                             }
                         });
@@ -194,14 +194,14 @@ public class ScanerActivity extends Activity implements
 
         builder.setMessage(titleHeader + ":" + info);
         builder.setTitle(operInfo);
-        builder.setPositiveButton("确认", new android.content.DialogInterface.OnClickListener() {
+        builder.setPositiveButton("confirm", new android.content.DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
                 dialog.dismiss();
             }
         });
-        builder.setNegativeButton("取消", new android.content.DialogInterface.OnClickListener() {
+        builder.setNegativeButton("cancel", new android.content.DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
