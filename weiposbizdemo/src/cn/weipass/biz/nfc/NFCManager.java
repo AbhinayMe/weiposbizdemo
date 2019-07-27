@@ -153,21 +153,28 @@ public class NFCManager {
             Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
             try {
             	na = IsoDep.get(tag);
-                na.setTimeout(2000);
-            	na.connect();
-				if (mNFCListener != null) {
-					final byte[] id =CpuCardBiz.getID(na);
-					Log.d("ID============>>>",HEX.bytesToHex(id));
-					mNFCListener.onReciveDataOffline(id);
+				if (na == null) {
+					Log.d(NFCManager.class.getSimpleName(), "Not an IsoDep tag: " + tag);
 				}
+				else {
+					na.setTimeout(2000);
+					na.connect();
+					if (mNFCListener != null) {
+						final byte[] id =CpuCardBiz.getID(na);
+						Log.d("ID============>>>",HEX.bytesToHex(id));
+						mNFCListener.onReciveDataOffline(id);
+					}
+					mNFCListener.onReciveDataOffline(tag.getId());
+				}
+
             }catch (Exception e) {
                 e.printStackTrace();
-                mNFCListener.onError("标准NFC卡，卡ID："+HEX.bytesToHex(tag.getId()));
+                mNFCListener.onError("Standard NFC card，Card ID："+HEX.bytesToHex(tag.getId()));
             }
 
         }else{
         	 if (mNFCListener != null) {
-                 mNFCListener.onError("NFC不可用");
+                 mNFCListener.onError("NFC is not available");
              }
         }
 	}

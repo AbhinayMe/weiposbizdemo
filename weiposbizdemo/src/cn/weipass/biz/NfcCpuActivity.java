@@ -10,14 +10,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import cn.weipass.biz.nfc.BankCard.BankCardInfo;
 import cn.weipass.biz.nfc.NFCManager;
 
 /**
  * NFC：可以读到NFC标签
- * 
+ *
  * @author TIANHUI
- * 
+ *
  */
 public class NfcCpuActivity extends  Activity implements OnClickListener {
 
@@ -33,7 +35,7 @@ public class NfcCpuActivity extends  Activity implements OnClickListener {
 		TextView topTitle = (TextView) findViewById(R.id.page_top_title);
 		topTitle.setText("旺POS CPU卡通讯");
 		findViewById(R.id.btn_return).setOnClickListener(this);
-		
+
 		stapInfoTv = (TextView) findViewById(R.id.test_content_stap_info);
 
 		setTestRange();
@@ -48,15 +50,17 @@ public class NfcCpuActivity extends  Activity implements OnClickListener {
 		sb.append(str+"\n");
 		sb.append(msg+"\n");
 
+
+
 		stapInfoTv.setText(sb.toString());
 	}
-	
+
 	@Override
 	protected void onResume() {
 		super.onResume();
 		mNFCManager.setNFCListener(mNFCListener);
 		mNFCManager.onResume(this);
-		
+
 	}
 
 	@Override
@@ -84,11 +88,13 @@ public class NfcCpuActivity extends  Activity implements OnClickListener {
 			if (data != null) {
 				try {
 					String cardId = new String(data, "UTF-8");
+
+					Toast.makeText(NfcCpuActivity.this, "" + cardId, Toast.LENGTH_SHORT).show();
 					updateLogInfo("旺POS CPU NFC卡，卡号："+cardId);
 				} catch (UnsupportedEncodingException e) {
 					e.printStackTrace();
 					updateLogInfo("NFC读卡失败");
-				} 
+				}
 				mNFCManager.clearNFCParams();
 			} else {
 				updateLogInfo("NFC读卡失败");
@@ -104,7 +110,7 @@ public class NfcCpuActivity extends  Activity implements OnClickListener {
 		@Override
 		public void onReciveBankDataOffline(BankCardInfo bankCard) {
 			// TODO Auto-generated method stub
-			
+
 		}
 	};
 
@@ -130,12 +136,12 @@ public class NfcCpuActivity extends  Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		super.onActivityResult(requestCode, resultCode, data);
 		switch (requestCode) {
-		case 0:
+			case 0:
 
-			break;
+				break;
 
-		default:
-			break;
+			default:
+				break;
 		}
 	}
 
@@ -143,12 +149,12 @@ public class NfcCpuActivity extends  Activity implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.btn_return:
-			onBackPressed();
-			break;
+			case R.id.btn_return:
+				onBackPressed();
+				break;
 
-		default:
-			break;
+			default:
+				break;
 		}
 	}
 

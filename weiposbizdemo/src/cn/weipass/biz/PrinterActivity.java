@@ -176,14 +176,14 @@ public class PrinterActivity extends Activity implements
 
 		builder.setMessage(titleHeader + ":" + info);
 		builder.setTitle(operInfo);
-		builder.setPositiveButton("确认", new android.content.DialogInterface.OnClickListener() {
+		builder.setPositiveButton("confirm", new android.content.DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 
 				dialog.dismiss();
 			}
 		});
-		builder.setNegativeButton("取消", new android.content.DialogInterface.OnClickListener() {
+		builder.setNegativeButton("cancel", new android.content.DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();
